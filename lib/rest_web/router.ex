@@ -23,6 +23,7 @@ defmodule RestWeb.Router do
   scope "/api", RestWeb do
     pipe_through :api
     resources "/courses", CourseController#, expect: [:new, :edit]
+    resources "/assignments", AssignmentController
     get "/rest", RestController, :index
     get "/rest/:messenger", RestController, :show
   end
